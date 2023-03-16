@@ -1,2 +1,3 @@
-# Faculdade
-atividade web
+# Atividade Faculdade
+
+Exercícios feitos com HTML, CSS E JS
