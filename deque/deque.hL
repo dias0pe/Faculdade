@@ -1,0 +1,108 @@
+/* Arquivo: deque.h
+* Biblioteca de operações para deque implementada com ponteiro.
+*/
+#define VERDADEIRO 1
+#define FALSO 0
+
+typedef struct nodo *nodo_pt;
+typedef struct nodo {
+    elemento e;
+    nodo_pt prox;
+} tnodo;
+
+typedef struct tipo_deque {
+    nodo_pt inicio, fim;
+} deque;
+
+/*
+* Cria um deque vazio.
+*/
+void CriarDeque(deque *d) {
+    d->inicio = NULL;
+    d->fim = NULL;
+}
+
+/*
+* Verifica se o deque está vazio.
+*/
+int DequeVazio(deque *d) {
+    return ((d->inicio == NULL) && (d->fim == NULL));
+}
+
+/*
+* Insere um novo elemento no início do deque.
+*/
+void InserirInicio(deque *d, elemento x) {
+    nodo_pt p;
+    p = (nodo_pt) malloc(sizeof(tnodo));
+    p->e = x;
+    p->prox = d->inicio;
+    if (DequeVazio(d))
+        d->fim = p;
+    d->inicio = p;
+}
+
+/*
+* Insere um novo elemento no fim do deque.
+*/
+void InserirFim(deque *d, elemento x) {
+    nodo_pt p;
+    p = (nodo_pt) malloc(sizeof(tnodo));
+    p->e = x;
+    p->prox = NULL;
+    if (DequeVazio(d))
+        d->inicio = p;
+    else
+        d->fim->prox = p;
+    d->fim = p;
+}
+
+/*
+* Remove um elemento do início do deque.
+*/
+elemento RemoverInicio(deque *d) {
+    elemento x;
+    nodo_pt p;
+    x = d->inicio->e;
+    p = d->inicio;
+    if (d->inicio == d->fim)
+        d->fim = NULL;
+    d->inicio = p->prox;
+    free(p);
+    return x;
+}
+
+/*
+* Remove um elemento do fim do deque.
+*/
+elemento RemoverFim(deque *d) {
+    elemento x;
+    nodo_pt p, prev;
+    x = d->fim->e;
+    p = d->inicio;
+    while (p->prox != d->fim) {
+        p = p->prox;
+    }
+    prev = p;
+    d->fim = prev;
+    prev->prox = NULL;
+    free(p);
+    return x;
+}
+
+/*
+* Atualiza um elemento no deque.
+*/
+void AtualizarElemento(deque *d, elemento e, int pos) {
+    nodo_pt p = d->inicio;
+    int i = 0;
+    while (p != NULL && i != pos) {
+        p = p->prox;
+        i++;
+    }
+    if (p == NULL) {
+        printf("\n ERRO: posição não existe!");
+    } else {
+        p->e = e;
+    }
+}
