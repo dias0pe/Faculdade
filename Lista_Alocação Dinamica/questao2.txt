@@ -1,17 +1,3 @@
 A biblioteca apresentada na prática possui uma função Alistar que insere um elemento após o nodo apontado por "pred", enquanto a primeira biblioteca apresentada tem uma função InserirInicio que insere no início da lista e InserirFim que insere no fim da lista.
 
 A segunda biblioteca usa uma função PesquisarLista para procurar um elemento na lista e retorna o endereço do ponteiro que aponta para esse elemento ou NULL se o elemento não estiver na lista. A primeira biblioteca utiliza uma função PesquisarLista que procura um elemento na lista e retorna a posição anterior ao elemento procurado, se encontrado.
-
-Lista Duplamente Encadeada:
-
-Uma lista duplamente encadeada é uma estrutura de dados em que cada nodo possui um ponteiro para o nodo anterior e outro para o próximo. Para adaptar a biblioteca da prática para uma lista duplamente encadeada, você deve modificar a estrutura nodo para incluir um ponteiro para o nodo anterior (por exemplo, pt_nodo anterior;). Além disso, você deve ajustar as funções Alistar e Desalistar para manter as conexões para trás (anterior) e para a frente (prox) ao inserir e remover elementos.
-
-Lista Circular:
-
-Uma lista encadeada circular é aquela em que o último nodo aponta de volta para o primeiro nodo, criando um loop. Para criar uma lista circular, você pode adaptar a biblioteca da prática adicionando um nodo especial para representar o último nodo que apontará para o primeiro nodo. Isso significa que você terá que modificar as funções Alistar e Desalistar para lidar com a circularidade.
-
-Lista Duplamente Encadeada Circular:
-
-Uma lista duplamente encadeada circular combina as características de uma lista duplamente encadeada e uma lista encadeada circular, ou seja, cada nodo possui ponteiros tanto para o próximo quanto para o anterior, e o último nodo aponta de volta para o primeiro nodo, criando um loop. Adaptar a biblioteca para isso requer modificações semelhantes às mencionadas acima para uma lista duplamente encadeada e uma lista circular.
-
-As vantagens e desvantagens de usar uma lista duplamente encadeada, uma lista circular ou uma lista duplamente encadeada circular dependem das necessidades específicas do seu aplicativo. Por exemplo, uma lista circular pode ser útil para percorrer uma sequência de elementos repetidamente, enquanto uma lista duplamente encadeada permite fácil navegação em ambas as direções. Uma lista duplamente encadeada circular combina essas vantagens, mas também pode ser mais complexa de implementar. Portanto, a escolha do tipo de lista depende da eficiência e da facilidade de uso necessárias em seu contexto.
