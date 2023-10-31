@@ -1,0 +1,3 @@
+A biblioteca apresentada na prática possui uma função Alistar que insere um elemento após o nodo apontado por "pred", enquanto a primeira biblioteca apresentada tem uma função InserirInicio que insere no início da lista e InserirFim que insere no fim da lista.
+
+A segunda biblioteca usa uma função PesquisarLista para procurar um elemento na lista e retorna o endereço do ponteiro que aponta para esse elemento ou NULL se o elemento não estiver na lista. A primeira biblioteca utiliza uma função PesquisarLista que procura um elemento na lista e retorna a posição anterior ao elemento procurado, se encontrado.
